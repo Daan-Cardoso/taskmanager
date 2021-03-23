@@ -1,0 +1,134 @@
+.search {
+  width: 300px;
+  height: 50px;
+  border-radius: 18px;
+  position: relative;
+  background-color: darkgrey;
+  display: flex;
+
+  &__input {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: inherit;
+    border: none;
+    padding: 10px;
+    padding-left: 30px;
+    font-size: 18px;
+    color: white;
+    letter-spacing: 1px;
+    border-radius: 18px;
+
+    &:focus {
+      outline: none;
+      
+      &::placeholder {
+        color: darkgrey;
+      }
+    }
+
+    &::placeholder {
+      color: inherit;
+    }
+  }
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  display: block;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+
+    &::before, &::after {
+      display: block;
+      content: "";
+      position: absolute;
+    }
+
+  &-search {
+    border: 2px solid white;
+    border-radius: 50%;
+    position: relative;
+    transition: .5s linear;
+
+    &::before {
+      width: 6px;
+      height: 2px;
+      background-color: white;
+      bottom: -2px;
+      right: -2px;
+      transform: rotate(45deg);
+      transition: .2s linear;
+    }
+
+    &--hide {
+      height: 0;
+      width: 0;
+      border: 0;
+      transition: .5s linear;
+
+      &::before {
+        width: 0;
+        height: 0;
+        transition: .2s linear;
+      }
+    }
+  }
+
+  &-typing {
+    top: 50%;
+    left: 15px;
+    box-sizing: content-box;
+    height: 5px;
+    border-top: 1px solid white;   
+    border-bottom: 2px solid white;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    transform: translateY(-40%) rotate(300deg);
+    transition: .5s linear;
+
+    &::before {
+      box-sizing: content-box;
+      width: 100%;
+      border-top: 1px solid lightgrey;
+      border-bottom: 1px solid lightgrey;
+      top: 80%;
+      transition: .5s linear;
+    }
+
+    &::after {
+      height: 6px;
+      width: 6px;
+      background: linear-gradient(222deg, transparent 55%, white 50%);
+      transform: rotate(48deg);
+      left: -4px;
+      transition: .5s linear;
+    }
+
+    &--animate {
+      animation: typing .5s linear infinite alternate;
+    }
+
+    &--hide {
+      width: 0;
+      height: 0;
+      border: 0;
+
+      &::before, &::after {
+        width: 0;
+        height: 0;
+      }
+    }
+  }
+}
+
+@keyframes typing {
+  from {
+    transform: translateY(-40%) rotate(300deg);
+  }
+  to {
+    transform: translateY(-40%) rotate(270deg);
+  }
+}

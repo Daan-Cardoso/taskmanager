@@ -1,12 +1,14 @@
 @import '../../assets/design_system/buttons';
 
+$btnColor: #3c3f54;
+
 .menu {
   width: 40px;
   height: 40px;
-  background-color: #3c3f54;
+  background-color: $btnColor;
 
   &:hover {
-    background: linear-gradient(45deg,rgba(60, 63, 84, .95) 50%, #3c3f54 50%);
+    background: linear-gradient(45deg,rgba($btnColor, .95) 50%, $btnColor 50%);
 
     .menu__icon{
 

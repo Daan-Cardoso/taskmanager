@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <ButtonMenu/>
+    <Checkbox text="Input your text here"/>
+    <Checkbox text="teste 2"/>
+    <Checkbox text="dash"/>
+    <Checkbox text="drift drift drift" :active="true"/>
   </div>
 </template>
 
 <script>
-import ButtonMenu from './components/ButtonMenu/ButtonMenu'
+import Checkbox from './components/Checkbox/Checkbox'
 
 export default {
   name: 'App',
   components: {
-    ButtonMenu
+    Checkbox
   }
 }
 </script>

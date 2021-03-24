@@ -1,0 +1,158 @@
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  row-gap: 20px;
+
+  &__shortName {
+    user-select: none;
+    color: white;
+    font-size: 26px;
+    font-family: sans-serif;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+
+    &::before, &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      box-sizing: border-box;
+      width: 80px;
+      height: 80px;
+      border: 18px solid rgba(255, 255, 255, .3);
+    }
+
+    &::before {
+      border-radius: 50%;
+    }
+
+    &--pink {
+      background: linear-gradient(220deg, #F93AC3 20%, #FA2D85);
+
+      &::before {
+        bottom: -38px;
+        left: -38px;
+      }
+
+      &::after {
+        top: -36px;
+        right: -38px;
+      }
+    }
+
+    &--aqua {
+      background: linear-gradient(220deg, #3976E1 20%, #2DD6A3);
+
+      &::before {
+        top: -24px;
+        right: -32px;
+      }
+
+      &::after {
+        bottom: -48px;
+        left: -44px;
+      }
+    }
+
+    &--purple {
+      background: linear-gradient(220deg, #633CBD 20%, #BE69D5);
+
+
+      &::before {
+        bottom: -50px;
+        left: 4px;
+      }
+
+      &::after {
+        top: -52px;
+        left: -54px;
+      }
+    }
+
+    &--blue {
+      background: linear-gradient(220deg, #2EB7EF 20%, #7344F0);
+
+
+      &::before {
+        bottom: 4px;
+        left: -40px;
+      }
+
+      &::after {
+        bottom: -52px;
+        right: -54px;
+      }
+    }
+
+    &--orange {
+      background: linear-gradient(220deg, #ED6C62 20%, #F8BF72);
+
+      &::before {
+        bottom: -46px;
+        right: -36px;
+      }
+
+      &::after {
+        top: -56px;
+        right: 22px;
+      }
+    }
+  }
+
+  &__card {
+    box-sizing: border-box;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
+    &--selected, &:hover {
+      box-sizing: border-box;
+      border-width: 2px;
+      border-style: solid;
+      width: 100px;
+      height: 100px;
+      border-radius: 15px;
+      
+
+      .project__shortName {
+        width: 90px;
+        height: 90px;
+      }
+      
+    }
+
+    &--pink {
+      border-color: #FA35A7;
+    }
+
+    &--aqua {
+      border-color: #33A4C3;
+    }
+
+    &--purple {
+      border-color: #864DC5;
+    }
+
+    &--blue {
+      border-color: #4E81F0;
+    }
+
+    &--orange {
+      border-color: #F2956A;
+    }
+
+  }
+}
+

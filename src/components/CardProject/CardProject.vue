@@ -13,13 +13,7 @@
       @click="toggleCardState"
     >
       <div
-        :class="[
-                  {'project__shortName--pink': template == 1},
-                  {'project__shortName--aqua': template == 2},
-                  {'project__shortName--purple': template == 3},
-                  {'project__shortName--blue': template == 4},
-                  {'project__shortName--orange': template == 5},
-                ]"
+        :class="{'animation': selected || active}"
         class="project__shortName"
       >
           {{shortName}}
